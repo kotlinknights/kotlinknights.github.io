@@ -1,6 +1,6 @@
 # Kotlin Knights
 
-Kotlin Knights is a Bristol based study group that aims to improve the understanding of Kotlin run by SWMobile.
+[Kotlin Knights](http://kotlinknights.com/) is a Bristol based study group that aims to improve your understanding of Kotlin through a community of Kotlin learners supporting each other. A sub project of the [SWmobile](https://www.meetup.com/swmobile/) Meetup group.
 
 ###### Special Thanks
 
