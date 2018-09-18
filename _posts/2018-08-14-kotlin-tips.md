@@ -1,6 +1,6 @@
 # Kotlin Tips And Tricks
 
-This post is a series of tips and tickets that [Elliot](https://github.com/elroid) compiled and showed off for his Kotlin Knights meetup in August.
+This post is a series of tips and observations that [Elliot](http://elroid.com/cv) compiled and presented for our Kotlin Knights meetup in August.
 
 ## `when` exhaustive
 
@@ -142,17 +142,20 @@ regValue?.text = regNum
 The `when` syntax can be useful if you have many request codes that you need to handle in a single result function.
 
 ```Kotlin
-startActivityForResult(TripLocationActivity.createIntent(getCtx(), location, address), REQUEST_TRIP_START)
+startActivityForResult(SomeActivity.createIntent(getCtx(), arguments), REQUEST_ID)
 
 override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-  when(requestCode) {
-    REQUEST_TRIP_START -> {
-      if(resultCode == Activity.RESULT_OK && data != null) {
-        presenter.startLocationEdited(TripLocationActivity.getLocation(data))
-      }
-    }
-    ...
-  }
+	when(requestCode) {
+		REQUEST_TRIP_NOTE -> {
+			if(resultCode == Activity.RESULT_OK) {
+				data?.let{
+					...
+				}
+			}
+		}
+		...
+		else -> super.onActivityResult(requestCode, resultCode, data)
+	}
 }
 ```
 
